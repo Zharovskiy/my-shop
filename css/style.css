@@ -75,5 +75,49 @@ body {
 
 /* Контейнер для сторінок */
 .page-container {
+}
+
+/* Головна сторінка */
+.page {
     background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Головний заголовок */
+.main-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Опис товару */
+.desc {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Список товарів */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Картка товара */
+.product-list__item {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(184, 184, 184);
+    padding: 20px;
+}
+
+.product-list__title {
+    margin-top: 0;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.product-list__price {
+    font-size: 21px;
+    margin-bottom: 15px;
 }
