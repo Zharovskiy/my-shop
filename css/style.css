@@ -19,4 +19,61 @@ img {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(231, 231, 231);
+}
+
+/* Скидання стилів */
+.list-reset {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* Кнопка */
+.btn {
+    color: white;
+    background-color: rgb(0, 85, 255);
+    padding: 15px 30px;
+    border: none;
+    outline: none;
+    border-radius: 0;
+    outline: 1px solid transparent;
+    transition: background-color .3s, outline-color .3s;
+}
+
+.btn:hover {
+    background-color: rgb(42, 113, 253);
+}
+
+.btn:active {
+    background-color: rgb(14, 74, 194);
+}
+
+.btn:focus {
+    outline-color: rgb(0, 85, 255);
+}
+
+/* Шапка */
+.header {
+    padding: 10px 0;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+/* Навігація */
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Контейнер для сторінок */
+.page-container {
+    background-color: white;
 }
