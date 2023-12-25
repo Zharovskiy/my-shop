@@ -1,38 +1,34 @@
 import {getHeader} from './components/header.js'
 import {getPageContainer} from './components/pageContainer.js'
 
-// Сторінки
-import {getMainPage} from './pages/main.js'
-import {getCatalogPage} from './pages/catalog.js'
-import {getBasketPage} from './pages/basket.js'
-
 const app = document.getElementById('app')
+
+export const router = new Navigo('/');
 
 const header = getHeader()
 const pageContainer = getPageContainer()
 
-// Навігація по сторінкам
-export function navigation(page) {
-    pageContainer.innerHTML = '';
-    switch (page) {
-        case 'catalog':
-            const catalogPage = getCatalogPage()
-            pageContainer.append(catalogPage)
-            break
-        case 'basket':
-            const basketPage = getBasketPage()
-            pageContainer.append(basketPage)
-            break
-        default: 
-            const mainPage = getMainPage()
-            pageContainer.append(mainPage)
-            break
-    }
-}
+router.on('/', async () => {
+    pageContainer.innerHTML = '' 
+    const moduleMain = await import('./pages/main.js')
+    const mainPage = moduleMain.getMainPage()
+    pageContainer.append(mainPage)
+  });
 
-navigation()
+router.on('/catalog', async () => {
+    pageContainer.innerHTML = '' 
+    const moduleCatalog = await import('./pages/catalog.js')
+    const catalogPage = moduleCatalog.getCatalogPage()
+    pageContainer.append(catalogPage) 
+  });
 
-// const productPage = getProductPage()
-// pageContainer.append(productPage)
+router.on('/basket', async () => {
+    pageContainer.innerHTML = '' 
+    const moduleBasket = await import('./pages/basket.js')
+    const basketPage = moduleBasket.getBasketPage()
+    pageContainer.append(basketPage) 
+  });  
+
+router.resolve();
 
 app.append(header, pageContainer)

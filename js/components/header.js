@@ -1,4 +1,4 @@
-import {navigation} from '../main.js'
+import {router} from '../main.js'
 
 // Створити шапку
 export function getHeader() {
@@ -17,7 +17,7 @@ export function getHeader() {
     link1.textContent = 'Головна сторінка'
     link1.addEventListener('click', function(event) {
         event.preventDefault()
-        navigation()
+        router.navigate('/');
     })
 
     let link2 = document.createElement('a')
@@ -26,7 +26,7 @@ export function getHeader() {
     link2.textContent = 'Каталог'
     link2.addEventListener('click', function(event) {
         event.preventDefault()
-        navigation('catalog')
+        router.navigate('/catalog');
     })
 
     let link3 = document.createElement('a')
@@ -35,7 +35,7 @@ export function getHeader() {
     link3.textContent = 'Кошик'
     link3.addEventListener('click', function(event) {
         event.preventDefault()
-        navigation('basket')
+        router.navigate('/basket');
     })
 
     nav.append(link1, link2, link3)
